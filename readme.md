@@ -5,7 +5,7 @@ Infrastructure and provisioning of Prisoner facing services Azure AD, and FMO (F
 
 This respository covers all the components linked to the Azure Active Directory, Intune and other components relating to the scaling of PFS
 
-##### Documentation Home (Confluence)
+##### Documentation Home (Confluence).
 
 See the FMO Docs and WAN Docs
 
