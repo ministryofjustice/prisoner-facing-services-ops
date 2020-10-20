@@ -54,10 +54,10 @@ elseif (($env:USERDOMAIN) -eq "BWI") {
 
 # Identifies the Domain / Site for Edu Laptop 2 the script is running on.
 If (($env:USERDOMAIN) -eq "WLI") {
-    $Global:Edu1 = "PLBWIEDU002"
+    $Global:Edu2 = "PLWLIEDU002"
 }
 elseif (($env:USERDOMAIN) -eq "BWI") {
-    $Global:Edu1 = "PLBWIEDU002"
+    $Global:Edu2 = "PLBWIEDU002"
 }
 
 # Outputs the Domain / Site the script is running on to the log file.
