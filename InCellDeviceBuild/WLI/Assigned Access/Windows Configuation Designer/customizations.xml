@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WindowsCustomizations>
+  <PackageConfig xmlns="urn:schemas-Microsoft-com:Windows-ICD-Package-Config.v1.0">
+    <ID>{1912e574-8bac-4566-8bf5-ebd20322e64f}</ID>
+    <Name>PFS Provisioning</Name>
+    <Version>1.46</Version>
+    <OwnerType>ITAdmin</OwnerType>
+    <Rank>0</Rank>
+    <Notes></Notes>
+  </PackageConfig>
+  <Settings xmlns="urn:schemas-microsoft-com:windows-provisioning">
+    <Customizations>
+      <Common>
+        <AssignedAccess>
+          <MultiAppAssignedAccessSettings>C:\Users\MOJ\Desktop\git\prisoner-facing-services-ops\InCellDeviceBuild\WLI\Assigned Access\Windows Configuation Designer\AssignedAccess.xml</MultiAppAssignedAccessSettings>
+        </AssignedAccess>
+        <Policies>
+          <Accounts>
+            <AllowAddingNonMicrosoftAccountsManually>No</AllowAddingNonMicrosoftAccountsManually>
+            <AllowMicrosoftAccountConnection>No</AllowMicrosoftAccountConnection>
+            <AllowMicrosoftAccountSignInAssistant>No</AllowMicrosoftAccountSignInAssistant>
+          </Accounts>
+          <ApplicationManagement>
+            <AllowGameDVR>No</AllowGameDVR>
+          </ApplicationManagement>
+          <Games>
+            <AllowAdvancedGamingServices>No</AllowAdvancedGamingServices>
+          </Games>
+        </Policies>
+      </Common>
+    </Customizations>
+  </Settings>
+</WindowsCustomizations>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssignedAccessConfiguration 
+    xmlns="http://schemas.microsoft.com/AssignedAccess/2017/config"
+    xmlns:rs5="http://schemas.microsoft.com/AssignedAccess/201810/config"
+    xmlns:v2="http://schemas.microsoft.com/AssignedAccess/201810/config"
+    xmlns:v3="http://schemas.microsoft.com/AssignedAccess/2020/config"
+    >
+<!--
+WLI Assigned Access
+Groups:
+    Prisoners - {9A2A490F-10F6-4764-974A-43B19E722C23}
+    Kiosks - {5B328104-BD89-4863-AB27-4ED6EE355485}
+    Digital Staff - {9A2A490F-10F6-4764-974A-43B19E722C24}
+    Staff - {9A2A490F-10F6-4764-974A-43B19E722C25} 
+-->
+    <Profiles>
+<!-- Prisoners -->
+        <Profile Id="{9A2A490F-10F6-4764-974A-43B19E722C23}">
+            <AllAppsList>
+                <AllowedApps>
+                    <App AppUserModelId="Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe!App" />
+                    <App AppUserModelId="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App" />
+                    <App AppUserModelId="Microsoft.WindowsAlarms_8wekyb3d8bbwe!App" />
+                    <App AppUserModelId="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
+                    <App AppUserModelId="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowsLive.calendar" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Kioskv31\Kiosk.exe" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe https://account.activedirectory.windowsazure.com/ChangePassword.aspx" />
+                    <App DesktopAppPath="%SystemDrive%\Windows\System32\SndVol.exe" />
+                    <App DesktopAppPath="%SYSTEM32%\shutdown.exe" />                    
+                </AllowedApps>
+            </AllAppsList>
+            <StartLayout>
+                <![CDATA[<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
+  <LayoutOptions StartTileGroupCellWidth="6" />
+  <DefaultLayoutOverride>
+    <StartLayoutCollection>
+      <defaultlayout:StartLayout GroupCellWidth="6">
+        <start:Group Name="Day To Day">
+          <start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Hub.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="2" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Kiosk.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Volume.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="2" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Change Password.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="0" Row="4" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Restart.lnk" />
+        </start:Group>
+        <start:Group Name="Accessories">
+          <start:Tile Size="2x2" Column="2" Row="6" AppUserModelID="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App" />
+          <start:Tile Size="2x2" Column="2" Row="4" AppUserModelID="Microsoft.WindowsAlarms_8wekyb3d8bbwe!App" />
+          <start:Tile Size="2x2" Column="0" Row="6" AppUserModelID="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
+          <start:Tile Size="4x4" Column="0" Row="0" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.calendar" />
+          <start:Tile Size="2x2" Column="0" Row="4" AppUserModelID="Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe!App" />
+        </start:Group>
+      </defaultlayout:StartLayout>
+    </StartLayoutCollection>
+  </DefaultLayoutOverride>
+</LayoutModificationTemplate>
+                ]]>
+            </StartLayout>
+            <Taskbar ShowTaskbar="true"/>
+        </Profile>
+<!-- End Prisoners -->
+<!-- Wing Kiosks -->
+        <Profile Id="{5B328104-BD89-4863-AB27-4ED6EE355485}">
+            <AllAppsList>
+                <AllowedApps>
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Kioskv31\Kiosk.exe" rs5:AutoLaunch="true"/>
+                    <App DesktopAppPath="%SystemDrive%\Windows\System32\shutdown.exe" />
+                </AllowedApps>
+            </AllAppsList>
+            <StartLayout>
+                <![CDATA[<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
+  <LayoutOptions StartTileGroupCellWidth="6" />
+  <DefaultLayoutOverride>
+    <StartLayoutCollection>
+      <defaultlayout:StartLayout GroupCellWidth="6">
+        <start:Group Name="Kiosk">
+          <start:DesktopApplicationTile Size="2x2" Column="2" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\WingKiosk.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="4" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Restart.lnk" />
+        </start:Group>
+      </defaultlayout:StartLayout>
+    </StartLayoutCollection>
+  </DefaultLayoutOverride>
+</LayoutModificationTemplate>
+                ]]>
+            </StartLayout>
+            <Taskbar ShowTaskbar="false"/>
+        </Profile>
+<!-- End Wing Kiosks -->
+<!-- Digital Admin Staff -->
+        <Profile Id="{9A2A490F-10F6-4764-974A-43B19E722C24}">
+            <AllAppsList>
+                <AllowedApps>
+                    <App AppUserModelId="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App" />
+                    <App AppUserModelId="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe https://account.activedirectory.windowsazure.com/ChangePassword.aspx" />
+                    <App DesktopAppPath="%SystemDrive%\Windows\system32\dsa.msc" />
+                    <App DesktopAppPath="%SystemDrive%\Windows\system32\MMC.EXE" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSAccess.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSApps.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsbioattendance.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSBioMovements.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsbiosearch.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSCasework.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSChecklists.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsdailyattendance.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSEducation.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSEmployment.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsexportvisitrules.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSFAQ.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSFinance.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSFinanceSync.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSGDPR.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSHousekeeping.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSIncidentReporting.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSIndex.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSLibrary.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSMenus.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSMovementConfig.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSMovementMonitor.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSNominalMovements.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSNoticeBoard.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSReception.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsreports.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSResidence.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsresidenceupdates.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSRetail.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSRollStatus.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSScheduling.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSSearch.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSSecurity.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSShop.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSStaff.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSStaffMovements.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSSurveys.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSSusBio.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmssync.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSTranslate.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSUpdate.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSUserTransactions.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSVisitorBooking.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSVisitorMovements.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\Transfer5x5.exe" />
+                </AllowedApps>
+            </AllAppsList>
+            <v2:FileExplorerNamespaceRestrictions>
+                <v3:AllowRemovableDrives />
+            </v2:FileExplorerNamespaceRestrictions>
+            <StartLayout>
+                <![CDATA[<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
+  <LayoutOptions StartTileGroupCellWidth="6" />
+  <DefaultLayoutOverride>
+    <StartLayoutCollection>
+      <defaultlayout:StartLayout GroupCellWidth="6">
+        <start:Group Name="Day To Day">
+          <start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Hub.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="2" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Change Password.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Users and Computers.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="2" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\CMS.lnk" />
+        </start:Group>
+        <start:Group Name="Accessories">
+          <start:Tile Size="2x2" Column="0" Row="0" AppUserModelID="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App" />
+          <start:Tile Size="2x2" Column="2" Row="0" AppUserModelID="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
+        </start:Group>
+      </defaultlayout:StartLayout>
+    </StartLayoutCollection>
+  </DefaultLayoutOverride>
+</LayoutModificationTemplate>
+                ]]>
+            </StartLayout>
+            <Taskbar ShowTaskbar="true"/>
+        </Profile>
+<!-- End Digital Admin Staff -->
+<!-- Staff -->
+        <Profile Id="{9A2A490F-10F6-4764-974A-43B19E722C25}">
+            <AllAppsList>
+                <AllowedApps>
+                    <App AppUserModelId="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App" />
+                    <App AppUserModelId="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe" />
+                    <App DesktopAppPath="%SystemDrive%\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe https://account.activedirectory.windowsazure.com/ChangePassword.aspx" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSAccess.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSApps.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsbioattendance.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSBioMovements.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsbiosearch.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSCasework.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSChecklists.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsdailyattendance.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSEducation.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSEmployment.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsexportvisitrules.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSFAQ.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSFinance.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSFinanceSync.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSGDPR.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSHousekeeping.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSIncidentReporting.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSIndex.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSLibrary.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSMenus.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSMovementConfig.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSMovementMonitor.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSNominalMovements.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSNoticeBoard.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSReception.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsreports.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSResidence.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmsresidenceupdates.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSRetail.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSRollStatus.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSScheduling.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSSearch.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSSecurity.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSShop.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSStaff.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSStaffMovements.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSSurveys.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSSusBio.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\cmssync.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSTranslate.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSUpdate.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSUserTransactions.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSVisitorBooking.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\CMSVisitorMovements.exe" />
+                    <App DesktopAppPath="C:\CMSv31\Current Exes\Transfer5x5.exe" />
+                </AllowedApps>
+            </AllAppsList>
+            <StartLayout>
+                <![CDATA[<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
+  <LayoutOptions StartTileGroupCellWidth="6" />
+  <DefaultLayoutOverride>
+    <StartLayoutCollection>
+      <defaultlayout:StartLayout GroupCellWidth="6">
+        <start:Group Name="Day To Day">
+          <start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Hub.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="2" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Change Password.lnk" />
+          <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\CMS.lnk" />
+        </start:Group>
+        <start:Group Name="Accessories">
+          <start:Tile Size="2x2" Column="0" Row="0" AppUserModelID="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App" />
+          <start:Tile Size="2x2" Column="2" Row="0" AppUserModelID="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
+        </start:Group>
+      </defaultlayout:StartLayout>
+    </StartLayoutCollection>
+  </DefaultLayoutOverride>
+</LayoutModificationTemplate>
+                ]]>
+            </StartLayout>
+            <Taskbar ShowTaskbar="true"/>
+        </Profile>
+<!-- End Staff -->
+    </Profiles>
+    <Configs>
+        <Config>
+            <UserGroup Type="ActiveDirectoryGroup" Name="WLI\Access to Prisoner Laptops" />
+            <DefaultProfile Id="{9A2A490F-10F6-4764-974A-43B19E722C23}"/>
+        </Config>
+        <Config>
+            <Account>WLI\wlikioskuser</Account>
+            <DefaultProfile Id="{5B328104-BD89-4863-AB27-4ED6EE355485}"/>
+        </Config>
+        <Config>
+            <UserGroup Type="ActiveDirectoryGroup" Name="WLI\Digital Admin Staff" />
+            <DefaultProfile Id="{9A2A490F-10F6-4764-974A-43B19E722C24}"/>
+        </Config>
+        <Config>
+            <UserGroup Type="ActiveDirectoryGroup" Name="WLI\All Officers" />
+            <DefaultProfile Id="{9A2A490F-10F6-4764-974A-43B19E722C25}"/>
+        </Config>
+    </Configs>
+</AssignedAccessConfiguration>
+<!--
+WLI Assigned Access
+Groups:
+    Prisoners - {9A2A490F-10F6-4764-974A-43B19E722C23}
+    Kiosks - {5B328104-BD89-4863-AB27-4ED6EE355485}
+    Digital Staff - {9A2A490F-10F6-4764-974A-43B19E722C24}
+    Staff - {9A2A490F-10F6-4764-974A-43B19E722C25} 
+-->
