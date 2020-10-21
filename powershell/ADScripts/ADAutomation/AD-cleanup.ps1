@@ -27,6 +27,7 @@
 #
 # VERSION CONTROL
 # 1.0   :: 06/03/2019 :: Creation
+# 1.1   :: 21/10/2020 :: Updated - David Robinson
 #
 #**************************************************************************************************
 #**************************************************************************************************
@@ -75,7 +76,7 @@ Function Get-ADInfo {
     $global:prisonercsv = "D:\ad-automation\Name-Prisoners-$date.csv"
     $global:officercsv = "D:\ad-automation\Name-Officers-$date.csv"
 
-    $90Days = (get-date).adddays(-90)
+    $90Days = (get-date).adddays(-28)
     #Get Raw data
     Write-Output "Getting raw data"
     Add-Log "Getting raw data"
