@@ -125,9 +125,9 @@ try
                 switch ($blob.Name)
                 {
                     # Add additional sites when needed
-                    'cookham.txt' {$PasswordProfile.Password = "****"; $Department = "Cookham"; $ShortName = "CWI"}
-                    'wayland.txt' {$PasswordProfile.Password = "****"; $Department = "Wayland"; $Shortname = "WLI"}
-                    'berwyn.txt' {$PasswordProfile.Password = "****"; $Department = "Berwyn"; $Shortname = "BWI"}
+                    'cookham.txt' {$PasswordProfile.Password = "****"; $Department = "Cookham"; $ShortName = "CWI"} ## Vault SITEDefaultUserPassword
+                    'wayland.txt' {$PasswordProfile.Password = "****"; $Department = "Wayland"; $Shortname = "WLI"} ## Vault SITEDefaultUserPassword
+                    'berwyn.txt' {$PasswordProfile.Password = "****"; $Department = "Berwyn"; $Shortname = "BWI"} ## Vault SITEDefaultUserPassword
                 }
 
                 Add-Log ("Set site variable for $Department")
