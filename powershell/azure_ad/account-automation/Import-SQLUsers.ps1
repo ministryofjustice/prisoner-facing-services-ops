@@ -6,15 +6,15 @@ param (
   [Parameter()]
   $storageAccountName = "unilinksqlbackup1",
   [Parameter()]
-  $storageAccountKey = "*** In vault ****",
+  $storageAccountKey = "*** In vault ****", # unilinksqlbackupstorageaccountkey
   [Parameter()]
   $storageAccountContainer = "useraccountscreation",
   [Parameter()]
   $tenantID = "c22fc3cd-0711-47f1-ab72-a5b70634ad1d",
   [Parameter()]
-  $certThumbprint = "*** In vault ****",
+  $certThumbprint = "*** In vault ****", #AzureADAutomationAccountCertificateThumbprint
   [Parameter()]
-  $appID = "*** In vault ****"
+  $appID = "*** In vault ****" #AzureADAutomationAccountAppID
 
 )
 
