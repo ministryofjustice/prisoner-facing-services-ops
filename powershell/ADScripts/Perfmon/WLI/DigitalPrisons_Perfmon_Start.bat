@@ -1,0 +1,1 @@
+logman start DigitalPrisons_DataCounter

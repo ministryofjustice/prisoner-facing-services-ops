@@ -1,0 +1,1 @@
+﻿Get-ADUser -Identity "kioskuser" | Unlock-ADAccount

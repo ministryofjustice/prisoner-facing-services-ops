@@ -1,0 +1,2 @@
+logman delete DigitalPrisons_DataCounter
+logman create counter DigitalPrisons_DataCounter -f csv -si 30 -v mmddhhmm -o "C:\Temp\Performance Data\DigitalPrisons_PerfmonFile" -cf "C:\temp\Perfmon template\DigitalPrisons_perfmon.config"
