@@ -1,0 +1,129 @@
+#Define variables
+
+
+variable "vm-count" {
+  default = "2"
+}
+
+variable "env" {
+  default = "prod"
+}
+
+variable "usage" {
+  default = "ul-ws"
+}
+
+
+variable "environment" {
+  type        = "string"
+  description = "tag for env"
+  default     = "prod"
+}
+
+variable "rg-name" {
+  type        = "string"
+  description = "resource group name"
+  default     = "pfs-unlink-core-rg"
+}
+
+variable "vm_size" {
+  type        = "string"
+  description = "size of the vm from t-shirts in Azure"
+  default     = "Standard_DS2_v2"
+}
+
+
+variable "prefix" {
+  default = "pfs-prod"
+}
+
+variable "location" {
+  default = "UK South"
+}
+
+
+variable "existing-subnet-name" {
+  default = "pfs-prod-web-sn"
+}
+
+variable "existing-vnet-name" {
+  default = "pfs-prod-core-vn"
+}
+
+variable "network-rg" {
+  default = "pfs-prod-core-rg"
+}
+
+variable "ipallocation" {
+  default = "static"
+}
+
+
+
+variable "bootdiagstorage" {
+  default = "bootdiagstorageact"
+}
+
+variable "recovery_vault_name" {
+  description = "recovery_vault_name"
+  default     = "pfs-winvm-prod-recovery-vault"
+}
+
+
+
+variable "manageddisktype" {
+  description = "type of disk, premium or standard - ssd or hdd"
+  default     = "Premium_LRS"
+}
+
+variable "disk_size_gb" {
+  description = "Size of managed disk"
+  default     = "256"
+}
+
+
+
+variable "sku" {
+  description = "The sku for the NIC"
+  default     = "Standard"
+}
+
+
+variable "workgroup_user" {
+  description = "workground username"
+  default     = "wguser"
+}
+
+variable "workgroup_password" {
+  description = "workground password"
+  default     = "wgpass"
+}
+variable "private_ip_address" {
+  type = "map"
+  default = {
+    1 = "10.42.1.104"
+    2 = "10.42.1.105"
+  }
+}
+
+variable "ips" {
+  type    = "list"
+  default = ["217.33.148.210", "81.134.202.29", "78.33.10.50"]
+}
+
+
+
+variable "subnets" {
+  type = "list"
+  default = ["/subscriptions/340944f4-b60c-46ba-9377-5668bba83ecd/resourceGroups/pfs-prod-core-rg/providers/Microsoft.Network/virtualNetworks/pfs-prod-core-vn/subnets/pfs-prod-app-sn",
+    "/subscriptions/340944f4-b60c-46ba-9377-5668bba83ecd/resourceGroups/pfs-prod-core-rg/providers/Microsoft.Network/virtualNetworks/pfs-prod-core-vn/subnets/pfs-prod-web-sn",
+    #"/subscriptions/340944f4-b60c-46ba-9377-5668bba83ecd/resourceGroups/pfs-prod-core-rg/providers/Microsoft.Network/virtualNetworks/pfs-prod-core-vn/subnets/pfs-prod-data-sn",
+    "/subscriptions/340944f4-b60c-46ba-9377-5668bba83ecd/resourceGroups/pfs-stage-core-rg/providers/Microsoft.Network/virtualNetworks/pfs-stage-core-vn/subnets/pfs-stage-web-sn",
+    "/subscriptions/340944f4-b60c-46ba-9377-5668bba83ecd/resourceGroups/pfs-stage-core-rg/providers/Microsoft.Network/virtualNetworks/pfs-stage-core-vn/subnets/pfs-stage-data-sn",
+    "/subscriptions/340944f4-b60c-46ba-9377-5668bba83ecd/resourceGroups/pfs-stage-core-rg/providers/Microsoft.Network/virtualNetworks/pfs-stage-core-vn/subnets/pfs-stage-app-sn",
+    "/subscriptions/340944f4-b60c-46ba-9377-5668bba83ecd/resourceGroups/pfs-dev-core-rg/providers/Microsoft.Network/virtualNetworks/pfs-dev-core-vn/subnets/pfs-dev-web-sn",
+    "/subscriptions/340944f4-b60c-46ba-9377-5668bba83ecd/resourceGroups/pfs-dev-core-rg/providers/Microsoft.Network/virtualNetworks/pfs-dev-core-vn/subnets/pfs-dev-data-sn",
+    "/subscriptions/340944f4-b60c-46ba-9377-5668bba83ecd/resourceGroups/pfs-dev-core-rg/providers/Microsoft.Network/virtualNetworks/pfs-dev-core-vn/subnets/pfs-dev-app-sn"
+  ]
+}
+
