@@ -6,8 +6,8 @@
 #terraform destroy 
 terraform {
   backend "azurerm" {
-    storage_account_name = "pfsterraformstate"                  #
-    container_name       = "prod"                    #
+    storage_account_name = "pfsterraformstate"                 #
+    container_name       = "prod"                              #
     key                  = "pfs_unilink_core_azure_ad.tfsprod" #
   }
 }

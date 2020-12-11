@@ -160,6 +160,6 @@ variable "avs" {
 variable "dns_servers" {
 
   type = list(string)
-  default = [ "10.42.4.4",
-            "10.42.4.5"]
+  default = ["10.42.4.4",
+  "10.42.4.5"]
 }

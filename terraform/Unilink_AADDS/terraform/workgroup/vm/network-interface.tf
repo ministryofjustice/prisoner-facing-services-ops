@@ -11,8 +11,8 @@ resource "azurerm_network_interface" "primary" {
     subnet_id                     = data.azurerm_subnet.core.id
     private_ip_address_allocation = "static"
     private_ip_address            = lookup(var.private_ip_address, count.index + 1, "Default")
-  
+
   }
-    dns_servers                   = var.dns_servers
+  dns_servers = var.dns_servers
 
 }

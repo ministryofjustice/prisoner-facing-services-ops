@@ -121,5 +121,5 @@ variable "avs" {
 
 
 variable "dns_servers" {
-  
+
 }
